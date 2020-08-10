@@ -37,7 +37,7 @@ jobs:
                 when: always
             - store_test_results:
                 path: ~$CIRCLE_TEST_REPORTS/phpunit
-                bash <(curl -s https://codecov.io/bash)
+                path: bash <(curl -s https://codecov.io/bash)
             - store_artifacts:
                 path: ~/phpunit
 
