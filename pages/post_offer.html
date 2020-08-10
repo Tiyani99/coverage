@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8" />
+  <title> Post Jobs Page</title>
+	<link rel="stylesheet" href="../css/post_offers_style.css?v=1.1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" type="image/png" href="../images/ccdu_logo.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="../js/post_offer.js"></script>
+
+  <script>
+    
+    $(document).ready(function() {
+      $("input[type='checkbox']").change(function() {
+
+        if( $(this).val() == "email" && $(this).is(":checked") ) {
+          $("#email_to_apply").show();
+          $("#to-upload").show();
+          $("#application_form").show();
+          $("#break1").show();
+          $("#break2").show();
+        }
+        else if ( $(this).val() == "email" && $(this).prop("checked") == false) {
+          $("#email_to_apply").hide();
+          $("#to-upload").hide();
+          $("#application_form").hide();
+          $("#break1").hide();
+          $("#break2").hide();
+        }
+        else if ( $(this).val() == "hyperlink" && $(this).is(":checked") ) {
+          $("#application-url").show();
+          $("#break3").show();
+        }
+        else if ($(this).val() == "hyperlink" && $(this).prop("checked") == false) {
+          $("#application-url").hide();
+          $("#break3").hide();
+        }
+      });
+
+      $(".type-of-job").click( function() {
+        $(".type-of-job").not(this).prop("checked", false);
+      });
+
+    });
+
+  </script>
+
+</head>
+<body>
+
+  <div class="page">
+    <nav class="nav-bar">
+      <div class="menu-bar">
+        <ol>
+          <img src="../images/ccdu_logo.png" style="width: 80px; height: 40px;">
+          <li><a href="../index.html">Home</a></li>
+          <li class = "active"><a href="post_offer.html">Post Offers</a></li>
+          <li><a href = "place_events.html">Place Events</a></li>
+          <li><a href = "pricing.html">Pricing</a></li>
+        </ol>
+      </div>
+    </nav>
+  
+    <div class="follow-us">
+      <a href="https://www.facebook.com/witsgraduaterecruitmentprogramme/"><i class="fa fa-facebook-f" style="font-size: 20px"></i></a><br><br>
+      <a href="https://twitter.com/Wits_GRP?s=09"><i class="fa fa-twitter" style="font-size: 20px"></i></a><br><br>
+      <a href="https://www.instagram.com/witsgrp/"><i class="fa fa-instagram" style="font-size: 20px"></i></a><br><br>
+      <a href="https://www.youtube.com/channel/UCWXJSwdXtqEwnd0ab1mfdPQ"><i class="fa fa-youtube" style="font-size: 20px"></i></a><br><br>
+      <a href="https://www.linkedin.com/in/wits-graduate-recruitment-programme-539627174"><i class="fa fa-linkedin" style="font-size: 20px"></i></a>
+    </div>
+  
+    <div class="header" style="margin-left: 200px">
+      <h2 class="home-header2-label" style="margin-top: 80px">03. <span class="home-header2" style="font-size: 30px">Post Offers</span></h2>
+      <hr>
+    </div>
+  
+    <form name="offer_form" action="../php/post_offer.php" method="post" class="post-offer" onsubmit="return validate()">
+  
+      <div class="getting-started">
+        <h2>Getting Started</h2>
+        <hr style="width: 500px">
+        <br><br>
+  
+        <label for="offer-title">Offer Title<span style="color:red">*</span></label><br>
+        <input type="text" name="offer_title" id="offer-title" size="40px" placeholder="Specific title">
+        <br><br>
+  
+        <label for="company-name">Company<span style="color:red">*</span></label><br>
+        <input type="text" name="company_name" id="company-name" size="40px" placeholder="Name of company for job post">
+        <br><br>
+  
+        <label for="location">Location<span style="color:red">*</span></label><br>
+        <input type="text" name="location" id="location" size="40px" placeholder="Place where the organisation/company is located">
+      </div>
+      <br>
+  
+      <div class="offer-details">
+        <h2>Offer Details</h2>
+        <hr style="width: 500px">
+        <br><br>
+  
+        <label for="type-of-job">What type of offer is it?<span style="color:red">*</span></label><br>
+        <input type="checkbox" class="type-of-job" id="cb-1" value="Full-time Job" name="offer_type[]">Full-time Job</input>
+        <input type="checkbox" class="type-of-job" id="cb-2" value="Part-time Job" name="offer_type[]" style="margin-left: 10px">Part-time Job</input>
+        <input type="checkbox" class="type-of-job" id="cb-3" value="Contract" name="offer_type[]" style="margin-left: 10px">Contract</input>
+        <br>
+        <input type="checkbox" class="type-of-job" id="cb-4" value="Internship" name="offer_type[]">Internship</input>
+        <input type="checkbox" class="type-of-job" id="cb-5" value="Traineeships" name="offer_type[]" style="margin-left: 31px">Traineeships</input>
+        <input type="checkbox" class="type-of-job" id="cb-6" value="Commission" name="offer_type[]" style="margin-left: 14.5px">Commission</input>
+        <br>
+        <input type="text" class="benefits" placeholder="Other" id="nnsj_25ds" name="other_offer_type">
+        <br><br>
+        <label for="salary">What is the salary for this offer?</label><br>
+        <label>R</label>
+        <input type="text" class="salary" id="from" name="salary_minimum" placeholder="Example: 5,000">
+        <label>to</label>
+        <input type="text" class="salary" id="to" name="salary_maximum" placeholder="Example: 10,000">
+        <select id="payment-period" name="payment_period">
+          <option value="1">per year</option>
+          <option value="2">per month</option>
+          <option value="3">per week</option>
+          <option value="4">per day</option>
+          <option value="5">per hour</option>
+        </select>
+        <br><br>
+        <label for="benefits">Which benefits does the offer have?</label><br>
+        <input type="checkbox" class="benefits" id="cb-b-1" value="Renters Insurance" name="benefits[]">Renters Insurance</input>
+        <input type="checkbox" class="benefits" id="cb-b-2" style="margin-left: 10px" value="Life Insurance" name="benefits[]">Life Insurance</input>
+        <input type="checkbox" class="benefits" id="cb-b-3" style="margin-left: 51px" value="Health Insurance" name="benefits[]">Health Insurance</input>
+        <br>
+        <input type="checkbox" class="benefits" id="cb-b-4" value="Car Insurance" name="benefits[]">Car Insurance</input>
+        <input type="checkbox" class="benefits" id="cb-b-5" style="margin-left: 36px" value="Disability Insurance" name="benefits[]">Disability Insurance</input>
+        <input type="checkbox" class="benefits" id="cb-b-6" style="margin-left: 14.5px" value="Dental Insurance" name="benefits[]">Dental Insurance</input>
+        <br>
+        <input type="text" class="benefits" placeholder="Other" id="other-b" name="other_benefits">
+        <br><br>
+        <label for="event_start_reg_date" display="block">When is the offer due date? <span style="color:red">*</span><span style="font-weight:normal"> date and time</span></label>
+        <br>
+        <input type="date" id="due_date" class="due_date_class" name="due_date">
+        <input type="time" id="due_time" class="due_date_class" name="due_time">
+      </div>
+      <br>
+  
+      <div class="offer-description">
+        <h2>Offer Description</h2>
+        <hr style="width: 500px">
+        <br><br>
+  
+        <h3>Vacancy Details<span style="color:red">*</span></h3>
+        <div class="vacancy-details-container">
+          <textarea name="vacancy_details" id="vd_mwmw46e4"></textarea>
+        </div>
+        <br>
+        <h3>Required Skills<span style="color:red">*</span></h3>
+        <div class="required_skills-container">
+          <textarea name="required_skills" id="vd_wwrfe4"></textarea>
+        </div>
+        <br>
+        <h3>Candidate Requirements<span style="color:red">*</span></h3>
+        <div class="candidate_requirements-container">
+          <textarea name="candidate_requirements" id="cr_mfv6e4"></textarea>
+        </div>
+  
+        <br>
+       
+      </div>
+      <br>
+  
+      <div class="application-settings">
+        <h2>Application Settings</h2>
+        <hr style="width: 500px">
+        <br><br>
+  
+        <label for="receive-application">How do you want to recieve applications?<span style="color:red">*</span></label><br>
+  
+        <input type="checkbox" class="receive-application" id="email" value="email" name="form_of_application[]">Email</input>
+  
+        <input type="checkbox" class="receive-application" id="hyperlink" value="hyperlink" name="form_of_application[]"style="margin-left:10px">
+        Online Application</input>
+  
+        <br id="break1" style="display:none">
+        <input style="display:none" type="text" name="email_to_apply" id="email_to_apply" size="30px" placeholder="Email for applications submission">
+        <br id="break2" style="display:none">
+        <label for="upload" style="display:none" id="to-upload">Upload application form</label>
+        <input type="file" name="application_form" id="application_form" style="display:none">
+  
+        <br id="break3" style="display:none">
+        <input type="url" name="application_url" id="application-url" style="display:none" placeholder="url for online applications" size="30px">
+  
+      </div>
+      <br>
+      <input type="submit" value="Send offer for validation">
+  
+    </form>
+  </div>
+  
+</body>
+</html>

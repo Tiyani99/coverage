@@ -1,0 +1,488 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: transparent;
+	color: rgb(136, 146, 200);
+	margin-bottom: 50px;
+}
+
+.nav-bar {
+	display: inline-block;
+	box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+	top: 0;
+  width: 100%;
+  color: rgb(203, 215, 245);
+	background-color: rgb(10, 25, 47);
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+  counter-reset: item 0;
+	padding: 15px;
+}
+
+.nav-bar ol {
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+
+.nav-bar ol li {
+	position: relative;
+	font-size: 13px;
+	counter-increment: item 1;
+	margin: 0px 10px;
+}
+
+#login-btns #sign_in, #sign_up{
+	background-color: #2980b9;
+	padding: 8px;
+	text-align: right;
+	font-size: 13px;
+	color: white;
+}
+
+#login-btns #sign_in:hover, #sign_up:hover{
+	color: #00ff84;
+	background-color: #3a5bad;
+	cursor: pointer;
+}
+
+.nav-bar ol li#list_item::before {
+	content: "0" counter(item) ". ";
+	text-align: right;
+	font-size: 13px;
+	color: #00ff84;
+}
+
+
+.nav-bar ol li a {
+	text-decoration: none;
+	text-align: center;
+	color: #fff;
+}
+
+.active, .nav-bar ol li a:hover {
+	color: #00ff84;
+}
+
+.active {
+	text-decoration: underline;
+}
+
+#sidebar {
+	position: fixed;
+	width: 100px;
+	height: 150px;
+	background-color: rgb(10, 25, 47);
+	transition: 0.5s;
+	left: -100px;
+}
+
+#sidebar.isactive {
+	left: 0;
+}
+
+#sidebar ul li {
+	list-style: none;
+	padding: 6px 3px;
+	margin-top: 10px;
+	border-bottom: 1px solid rgba(100,100,100,0.4)
+}
+
+#sidebar .toggle-button {
+	position: absolute;
+	cursor: pointer;
+	left: 110px;
+}
+
+#sidebar .toggle-button span 	{
+	display: block;
+	width: 20px;
+	height: 3px;
+	background-color: #000;
+	margin: 3px 0px;
+}
+
+#sidebar .sidebar-list ul li #click_ak511 {
+	display: none;
+}
+
+#sidebar .sidebar-list ul li #click_asdc11 {
+	display: none;
+}
+
+#sidebar .sidebar-list ul li .sidebar-list-items {
+	display: list-item;
+	color: #049EF4;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#sidebar .sidebar-list ul li .sidebar-list-items:hover {
+	color: rgb(0, 115, 197);
+	text-decoration: underline;
+}
+
+form {
+	margin-left: 200px;
+	margin-top: 100px;
+	padding-bottom: 20px;
+}
+
+label {
+	font-weight: bold;
+}
+
+th {
+	font-weight: normal;
+	text-align: left;
+}
+
+textarea {
+	padding-left: 3px;
+	padding-right: 3px;
+	width: 400px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: rgb(231, 241, 238);
+}
+
+/*p*/
+p {
+	margin-left: 200px;
+}
+.welcome-text {
+	margin-top: 60px;
+	margin-left: 200px;
+}
+.ccdu-activities-list {
+	margin-left: 0px;
+	margin-top: 20px;
+}
+.contact-details-ccdu {
+	margin-top: 0px;
+	color: black;
+}
+
+/*h1*/
+.ccdu-name {
+	margin-top: 50px;
+	margin-left: 200px;
+}
+
+.portal-name {
+	margin-top: 50px;
+	animation: right_to_left 3s ease;
+}
+
+@keyframes right_to_left {
+	from {
+		margin-left: 900px;
+	}
+	to {
+		margin-left: 200px;
+	}
+}
+
+@keyframes fadeIn {
+	0% {opacity: 0};
+	100% {opacity: 1};
+}
+
+h1 {
+	margin-top: 50px;
+	margin-left: 200px;
+}
+
+/*h2*/
+h2 {
+	color: #00ff84;
+	margin-top: 0px;
+}
+
+.define-ccdu {
+	margin-left: 200px;
+	color: rgb(10, 25, 47);
+}
+
+.ccdu-form-header {
+	color: #fff;
+}
+
+.home-header2 {
+	color: rgb(10, 25, 47);
+}
+
+.home-header2-label {
+	color: #00ff84;
+	font-size: 20px;
+}
+
+.faq-header {
+	margin-top: 40px;
+	margin-left: 200px;
+}
+/*h3*/
+h3 {
+	margin-left: 200px;
+	color: rgb(10, 25, 47);
+}
+
+/*a*/
+a {
+	color: #049EF4;
+	text-decoration: none;
+}
+
+a:hover {
+	color: rgb(0, 115, 197);
+	text-decoration: underline;
+}
+
+/*blockquote*/
+blockquote {
+	margin-left: 20px;
+	margin-top: 50px;
+	display: block;
+}
+
+div.border {
+	border-left: 6px solid #00ff84;
+	height: 40px;
+	margin-left: 200px;
+}
+
+input[type=text], input[type=email], input[type=password] {
+	padding-left: 3px;
+	padding-right: 3px;
+	height: 20px;
+	border-radius: 2px;
+	background-color: rgb(231, 241, 238);
+}
+
+input[type=button] {
+	padding: 5px;
+	border-radius: 3px;
+	margin-top: 10px;
+	background: rgb(136, 146, 187);
+}
+
+input[type=date] {
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 2px;
+	background-color: rgb(231, 241, 238);
+}
+
+input[type=time] {
+	border-radius: 2px;
+	background-color: rgb(231, 241, 238);
+}
+
+hr {
+	border-style: inset;
+}
+
+/*form*/
+.ccdu-activities {
+	border-style: inset;
+	margin-right: 600px;
+	padding-left: 20px;
+	padding-top: 20px;
+	margin-top: 60px;
+	background-color: rgb(10, 25, 47);
+}
+
+.ccdu-team-activities {
+	border-style: inset;
+	height: 200px;
+	width: 300px;
+	margin: 30px 0px 0px 15px;
+	padding: 10px;
+	background-color: transparent;
+	overflow-y: auto;
+}
+
+.faq-form {
+	border-style: inset;
+	margin-right: 500px;
+	padding-left: 20px;
+	padding-top: 20px;
+	margin-top: 40px;
+}
+
+div:target {
+	display: block;
+}
+
+div.follow-us {
+	margin-left: 100px;
+	margin-top: 180px;
+	position: fixed;
+	animation: fadeIn 3s ease;
+}
+/* About organization */
+.modal-container {
+	opacity: 0;
+	visibility: hidden;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: visibility 0s opacity 1s;
+}
+
+.container-active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.modal {
+	position: relative;
+	background-color: rgb(10, 25, 47);
+	height: 500px;
+	width: 700px;
+	border-radius: 2px;
+	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 1.5);
+	overflow-y: auto;
+	padding-bottom: 20px;
+	padding-right: 30px;
+}
+
+.model-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-weight: bold;
+	background-color: white;
+	cursor: pointer;
+	padding-left: 3px;
+	padding-right: 3px;
+	color: black;
+	transition: visibility 0s opacity 0.5s;
+}
+/* Sign in */
+.sign-in-modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.sign-in-modal-active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.sign-in {
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	background-color: white;
+	width: 30%;
+	height: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column; 
+}
+
+.sign-in .sign-in-details {
+	width: 80%;
+	height: 15%;
+	border: #000;
+	font-size: 16px;
+}
+
+.h2-login {
+	color: rgb(10, 25, 47);;
+}
+
+#login_btn1 {
+	background-color: #049EF4;
+	width: 30%;
+	height: 10%;
+	border-radius: 5%;
+	border: #000;
+	cursor: pointer;
+}
+
+#login_btn2 {
+	background-color: #049EF4;
+	width: 30%;
+	height: 5%;
+	border-radius: 2%;
+	border: #000;
+	cursor: pointer;
+}
+
+.close-sign-in, .close-sign-up {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	padding-left: 3px;
+	padding-right: 3px;
+	color: black;
+	transition: visibility 0s opacity 0.5s;
+}
+/* Sign up */
+.sign-up-modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.sign-up-modal-active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.sign-up {
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	background-color: white;
+	width: 45%;
+	height: 80%;
+	margin-top: 30px;
+	/* margin-right: 15%; */
+	padding-top: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column; 
+}
+
+.sign-up .sign-up-details {
+	width: 50%;
+	height: 5%;
+	border: #000;
+	font-size: 16px;
+}
+
+

@@ -1,0 +1,178 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: transparent;
+	color: rgb(136, 146, 200);
+	margin-bottom: 50px;
+}
+
+.nav-bar {
+	display: flex;
+	box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+	top: 0;
+  width: 100%;
+  color: rgb(203, 215, 245);
+	background-color: rgb(10, 25, 47);
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+  counter-reset: item 0;
+	padding: 15px;
+}
+
+.nav-bar ol {
+	display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-bar ol li {
+	position: relative;
+  font-size: 13px;
+  counter-increment: item 1;
+  margin: 0px 10px;
+}
+
+.nav-bar ol li::before {
+	content: "0" counter(item) ". ";
+	text-align: right;
+	font-size: 13px;
+	color: #00ff84;
+}
+
+.nav-bar ol li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.active, .nav-bar ol li a:hover {
+	color: #00ff84;
+	border-radius: 3px;
+}
+
+.active {
+	text-decoration: underline;
+}
+
+form {
+	margin-left: 200px;
+	margin-top: 100px;
+	padding-bottom: 20px;
+}
+
+label {
+	font-weight: bold;
+}
+
+.home-header2 {
+	color: rgb(10, 25, 47);
+}
+
+.home-header2-label {
+	color: #00ff84;
+	font-size: 20px;
+}
+
+th {
+	font-weight: normal;
+	text-align: left;
+}
+
+textarea {
+	padding-left: 3px;
+	padding-right: 3px;
+	width: 400px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: rgb(231, 241, 238);
+}
+
+h1 {
+	margin-left: 200px;
+	margin-top: 40px;
+}
+
+h2 {
+	color: #00ff84;
+}
+
+.advertising {
+	margin-left: 200px;
+	margin-top: 20px;
+	color: rgb(10, 25, 47);
+}
+
+p {
+	margin-left: 200px;
+	margin-top: 20px;
+}
+.note {
+	font-weight: bold;
+	margin-left: 0px;
+	color: black;
+}
+
+input[type=text] {
+	padding-left: 3px;
+	padding-right: 3px;
+	height: 20px;
+	border-radius: 2px;
+	background-color: rgb(231, 241, 238);
+}
+
+input[type=button] {
+	padding: 5px;
+	border-radius: 3px;
+	margin-top: 10px;
+	background: rgb(136, 146, 187);
+}
+
+input[type=date] {
+	border-radius: 2px;
+	background-color: rgb(231, 241, 238);
+}
+
+input[type=time] {
+	border-radius: 2px;
+	background-color: rgb(231, 241, 238);
+}
+
+hr {
+	border-style: inset;
+}
+
+.fees-form {
+	border-style: inset;
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-right: 10px;
+	margin-right: 500px;
+	margin-left: 200px;
+	margin-top: 20px;
+}
+
+@keyframes fadeIn {
+	0% {opacity: 0};
+	100% {opacity: 1};
+}
+
+div.follow-us {
+	margin-left: 100px;
+	margin-top: 180px;
+	position: fixed;
+	animation: fadeIn 3s ease;
+}
+
+a {
+	color: #049EF4;
+	text-decoration: none;
+}
+
+a:hover {
+	color: rgb(0, 115, 197);
+	text-decoration: underline;
+}

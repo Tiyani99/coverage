@@ -1,0 +1,250 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: transparent;
+	color: rgb(136, 146, 200);
+	margin-bottom: 50px;
+	resize: both;
+	overflow: auto;
+}
+
+.nav-bar {
+	display: flex;
+	box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+	top: 0;
+  width: 100%;
+  color: rgb(203, 215, 245);
+	background-color: rgb(10, 25, 47);
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+  counter-reset: item 0;
+	padding: 15px;
+}
+
+.nav-bar ol {
+	display: flex;
+  align-items: center;
+  list-style: none;
+	float: right;
+}
+
+.nav-bar ol li {
+	position: relative;
+  font-size: 13px;
+  counter-increment: item 1;
+  margin: 0px 10px;
+}
+
+.nav-bar ol li::before {
+	content: "0" counter(item) ". ";
+	text-align: right;
+	font-size: 13px;
+	color: #00ff84;
+}
+
+.nav-bar ol li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.active, .nav-bar ol li a:hover {
+	color: #00ff84;
+}
+
+.active {
+	text-decoration: underline;
+}
+
+label {
+	font-weight: bold;
+}
+
+label.job-description-label {
+	color: red;
+}
+
+.home-header2 {
+	color: rgb(10, 25, 47);
+}
+
+.home-header2-label {
+	color: #00ff84;
+	font-size: 20px;
+}
+
+th {
+	font-weight: normal;
+	text-align: left;
+}
+
+textarea {
+	resize: none;
+	overflow: auto;
+	border: 1px solid black;
+	padding: 5px;
+	font-size: 17px;
+	width: 700px;
+	height: 180px;
+	background-color: rgb(231, 241, 238);
+}
+
+h2 {
+	color: #00ff84;
+}
+
+h2.heading {
+	color: rgb(0,0,0);
+	margin-top: 80px;
+}
+
+input[type=text] {
+	padding-left: 3px;
+	padding-right: 3px;
+	height: 30px;
+	border-radius: 2px;
+	font-size: 17px;
+	background-color: rgb(231, 241, 238);
+}
+
+input[type=url] {
+	padding-left: 3px;
+	padding-right: 3px;
+	height: 30px;
+	border-radius: 2px;
+	font-size: 17px;
+	background-color: rgb(231, 241, 238);
+}
+
+input[type=submit] {
+	padding: 5px;
+	border-radius: 3px;
+	margin-top: 10px;
+	background: rgb(136, 146, 187);
+}
+
+input[type=date] {
+	border-radius: 2px;
+	background-color: rgb(231, 241, 238);
+}
+
+input[type=time] {
+	border-radius: 2px;
+	background-color: rgb(231, 241, 238);
+}
+
+input[type=checkbox] {
+	margin-right: 5px;
+}
+
+input[type=button] {
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 3px;
+	margin-top: 10px;
+	background: rgb(136, 146, 187);
+	margin-left: 200px;
+}
+
+hr {
+	border-style: inset;
+}
+
+form {
+	resize: none;
+	overflow: auto;
+	border-style: inset;
+	padding-left: 20px;
+	padding-top: 20px;
+	margin-right: 300px;
+	margin-left: 200px;
+	margin-top: 50px;
+	padding-bottom: 20px;
+}
+
+select {
+	font-size: 17px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.toolbar-button {
+	max-width: 30px;
+	cursor: pointer;
+	flex: 10px 0 25px;
+	text-align: center;
+	padding: 12px 0 0 0;
+	height: 45px;
+}
+
+div.editor-toolbar {
+	display: block;
+	background: rgb(231, 241, 238);
+	height: 30px;
+	width: 700px;
+	border: 1px solid #000;
+	padding: 5px;
+}
+div.editor-toolbar div.inner-block-list-group {
+	display: inline-block;
+	border: 1px solid #000;
+	border-radius: 5px;
+	margin-left: 2px;
+	background: #fff;
+	padding: 2px;
+}
+
+div.editor-toolbar button {
+	padding: 2px 6px;
+	cursor: pointer;
+}
+
+.btn_active, div.editor-toolbar button:hover {
+	background-color: #E8E8E8;
+}
+
+/*.not_active, div.editor-toolbar button {
+	background-color: transparent;
+}*/
+
+.icon {
+	font-size: 15px;
+	width: 15px;
+	height: 15px;
+	box-sizing: content-box;
+}
+
+div.editor-toolbar button .icon {
+	margin: 2px 0;
+	padding: 0;
+}
+
+.fa {
+	display: inline-block;
+}
+
+@keyframes fadeIn {
+	0% {opacity: 0};
+	100% {opacity: 1};
+}
+
+div.follow-us {
+	margin-left: 100px;
+	margin-top: 180px;
+	position: fixed;
+	animation: fadeIn 3s ease;
+}
+
+a {
+	color: #049EF4;
+	text-decoration: none;
+}
+
+a:hover {
+	color: rgb(0, 115, 197);
+	text-decoration: underline;
+}
