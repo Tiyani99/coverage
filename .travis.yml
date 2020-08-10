@@ -1,10 +1,15 @@
-language: generic 
-install:
-  - npm install -g codecov --save-dev
-  - npm install --save bufferutil@3 ws@1
-  - npm install jest --save-dev
-script:
-  - npm run test
-  
-after_success:
-- bash <(curl -s https://codecov.io/bash)
+lalanguage: generic
+
+sudo: required
+
+addons:
+  apt:
+    packages:
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libdw-dev
+      - cmake
+
+after_success: |
+  kcov coverage script.sh &&
+  bash <(curl -s https://codecov.io/bash)
