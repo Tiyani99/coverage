@@ -11,5 +11,5 @@ addons:
       - cmake
 
 after_success: |
-  kcov coverage script.sh &&
+  
   bash <(curl -s https://codecov.io/bash)
