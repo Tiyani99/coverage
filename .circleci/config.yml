@@ -53,9 +53,4 @@ jobs:
                 command: |
                     bash <(curl -s https://codecov.io/bash) -s coverage -d > upload.txt
                     bash <(curl -s https://codecov.io/bash) -s coverage
-            - store_artifacts:
-                path: codecov.txt
-            - store_artifacts:
-                path: coverage
-
-
+          
