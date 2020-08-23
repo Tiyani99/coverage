@@ -21,10 +21,7 @@ jobs:
                 command: |
                     mv .env.testing .env
 
-            # notify:
-            #     webhooks:
-            #         - url: https://coveralls.io/webhook?repo_token=${process.env.COVERALLS_REPO_TOKEN}
-
+       
             # Download and cache dependencies
             - restore_cache:
                 keys:
@@ -50,7 +47,15 @@ jobs:
             - run:
                 name: "Run Unit Tests"
                 command: ./vendor/bin/phpunit tests/Unit
-            - codecov/upload:
-                file: codecov.xml
+          
+            - run:
+                name: Upload Codecov
+                command: |
+                    bash <(curl -s https://codecov.io/bash) -s coverage -d > upload.txt
+                    bash <(curl -s https://codecov.io/bash) -s coverage
+            - store_artifacts:
+                path: codecov.txt
+            - store_artifacts:
+                path: coverage
 
 
