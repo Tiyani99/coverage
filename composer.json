@@ -1,7 +1,7 @@
 {
     "name": "phpunit/php-code-coverage",
     "description": "Provides coverage for testing",
-    "homepage": "https://github.com/sakhile22/Limps_404-.git",
+    "homepage": "https://github.com/Tiyani99/coverage.git",
 
     "scripts": {
         "test": "nyc --reporter=html --reporter=text ./vendor/bin/phpunit",
