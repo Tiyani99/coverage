@@ -48,8 +48,12 @@ jobs:
             - run:
                 name: "Run Unit Tests"
                 command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-clover coverage.xml
-            - run:
-                name: Upload Codecov
-                command: |
-                    bash <(curl -s https://codecov.io/bash)
+                
+            - codecov/upload:
+                file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
+           # - run:
+               # name: Upload Codecov
+               # command: |
+               #     bash <(curl -s https://codecov.io/bash)
+            
 
