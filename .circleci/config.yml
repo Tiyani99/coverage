@@ -56,8 +56,6 @@ jobs:
                 file: coverage.xml
                 
             - run: npm install
-            - run: npm test
                 
 
-            
-
+    
