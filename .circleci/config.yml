@@ -50,7 +50,8 @@ jobs:
                 command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-clover coverage.xml
                 
             - codecov/upload:
-                file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
+#                 file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
+                file: ./vendor/bin/phpunit --clover-xml=coverage.xml
                 
 #             - codecov/upload:
 #                 file: coverage.xml
