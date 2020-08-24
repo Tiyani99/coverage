@@ -47,7 +47,8 @@ jobs:
             # run tests with phpunit
             - run:
                 name: "Run Unit Tests"
-                command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-clover coverage.xml
+#                 command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-clover coverage.xml
+                command: phpdbg -qrr vendor/bin/phpunit tests/unit --clover-xml coverage.xml
                 
             - codecov/upload:
 #                 file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
