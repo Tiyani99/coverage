@@ -49,13 +49,19 @@ jobs:
                 name: "Run Unit Tests"
                 command: phpdbg -qrr vendor/bin/phpunit tests/unit --coverage-clover coverage.xml
                 
-#             - codecov/upload:
-#                 file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
-                
             - codecov/upload:
-                file: coverage.xml
+                file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
                 
-            - run: npm install
+#             - codecov/upload:
+#                 file: coverage.xml
+                
+#             - run: npm install
+            - run:
+                name : Upload Codecov
+                command: |
+                    echo "token" > .cc_token
+                    bash <(curl -s https://codecov.io/bash) -t @.cc_token
+                   
                 
 
     
