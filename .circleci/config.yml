@@ -52,7 +52,4 @@ jobs:
             - run:
                 name: Upload Codecov
                 command: |
-                     bash <(curl -s https://codecov.io/bash)
-               #     bash <(curl -s https://codecov.io/bash) -s coverage -d > upload.txt
-               #     bash <(curl -s https://codecov.io/bash) -s coverage
-               #     bash <(curl -s https://codecov.io/bash) -s coverage
+                    bash <(curl -s https://codecov.io/bash)
