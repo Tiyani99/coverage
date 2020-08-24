@@ -52,9 +52,6 @@ jobs:
             - codecov/upload:
                 file: ./vendor/bin/phpunit --coverage-clover=coverage.xml
                 
-           - run:
-               name: Upload Codecov
-                 command: |
-                    bash <(curl -s https://codecov.io/bash)
+
             
 
