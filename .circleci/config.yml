@@ -57,13 +57,19 @@ jobs:
 #             - codecov/upload:
 #                 file: coverage.xml
                 
-#             - run: npm install
+# #             - run: npm install
+#             - run:
+#                 name : Upload Codecov
+#                 command: |
+#                     echo "token" > .cc_token
+#                     bash <(curl -s https://codecov.io/bash) -t @.cc_token
+                    
             - run:
-                name : Upload Codecov
+                name: Upload Codecov
                 command: |
-                    echo "token" > .cc_token
-                    bash <(curl -s https://codecov.io/bash) -t @.cc_token
-                   
+                    bash <(curl -s https://codecov.io/bash) -s coverage -d > upload.txt
+                    bash <(curl -s https://codecov.io/bash) -s coverage
+        
                 
 
     
